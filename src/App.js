@@ -5,6 +5,8 @@ import Home from "./components/Home";
 import Header from "./components/Header";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default class App extends Component {
   constructor(props) {
@@ -14,10 +16,15 @@ export default class App extends Component {
       cases_time_series: [],
       statewise: [],
       tested: [],
+      display: false,
     };
   }
 
   componentDidMount() {
+    AOS.init({
+      duration: 3000,
+    });
+
     axios
       .get("https://api.covid19india.org/data.json")
       .then(async (res) => {
@@ -25,6 +32,7 @@ export default class App extends Component {
           cases_time_series: res.data.cases_time_series,
           statewise: res.data.statewise,
           tested: res.data.tested,
+          display: true,
         });
       })
       .catch((err) => {
@@ -33,7 +41,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { cases_time_series, statewise, tested } = this.state;
+    const { cases_time_series, statewise, tested, display } = this.state;
     return (
       <div className="select-none">
         <Header />
@@ -48,12 +56,12 @@ export default class App extends Component {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/:state"></Route>
+          <Route path="/state"></Route>
           <Route path="*">
             <Redirect to="/" />
           </Route>
         </Switch>
-        <Footer />
+        {display && <Footer />}
       </div>
     );
   }
