@@ -15,9 +15,9 @@ export default class State extends Component {
         <p className="shadow-md flex p-2 bg-orange-500 text-white rounded-md my-3 justify-center">
           {data.state} :{" "}
         </p>
-        <div className="grid grid-cols-2 gap-2 md:flex">
+        <div className="grid grid-cols-2 gap-2 ">
           <div className="mx-1 p-2 shadow-md rounded-md text-center text-base md:flex-1">
-            <span className="text-white rounded-md text-2xl flex bg-red-400 justify-center p-1 my-4 w-full">
+            <span className="text-white rounded-md text-2xl flex bg-red-600 justify-center p-1 my-4 w-full">
               Confirmed
             </span>
             {data.deltaconfirmed > 0 ? (
