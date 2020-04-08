@@ -26,7 +26,7 @@ export default class About extends Component {
   render() {
     const { faq } = this.state;
     return (
-      <div className="container mx-auto md:px-16 px-4 mt-3">
+      <div data-aos="fade-up" className="container mx-auto md:px-16 px-4 mt-3">
         <p className="p-2 text-4xl">Faq :</p>
         {faq.map((data, i) => {
           return <Faq faq={data} key={i} />;
