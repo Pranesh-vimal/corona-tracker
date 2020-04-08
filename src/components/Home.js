@@ -28,6 +28,9 @@ export default class Home extends Component {
         </p>
         <div className="grid grid-cols-1">
           <div className="mt-2">
+            <p className="shadow-md flex text-lg p-2 bg-indigo-600 text-white rounded-md my-3 justify-center">
+              India{" "}
+            </p>
             {statewise.map((data, i) => {
               if (i === 0) {
                 return <Total key={data.state} data={data} />;
@@ -37,12 +40,12 @@ export default class Home extends Component {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {statewise.map((data, i) => {
-              if (i !== 0) {
-                return <State key={data.state} data={data} />;
-              }
-              return "";
-            })}
+          {statewise.map((data, i) => {
+            if (i !== 0) {
+              return <State key={data.state} data={data} />;
+            }
+            return "";
+          })}
         </div>
       </div>
     );

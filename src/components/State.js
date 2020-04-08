@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LastUpdated from "./LastUpdated";
 
 export default class State extends Component {
   constructor(props) {
@@ -12,12 +13,15 @@ export default class State extends Component {
 
     return (
       <div className="my-2">
-        <p className="shadow-md flex p-2 bg-orange-500 text-white rounded-md my-3 justify-center">
+        <p className="shadow-md flex text-lg p-2 bg-orange-500 text-white rounded-md my-3 justify-center">
           {data.state} :{" "}
+        </p>
+        <p className="my-1 text-green-600 text-center">
+          Last Updated At <LastUpdated data={data} />
         </p>
         <div className="grid grid-cols-2 gap-2 ">
           <div className="mx-1 p-2 shadow-md rounded-md text-center text-base md:flex-1">
-            <span className="text-white rounded-md text-2xl flex bg-red-600 justify-center p-1 my-4 w-full">
+            <span className="text-white rounded-md flex bg-red-600 justify-center p-1 my-4 w-full">
               Confirmed
             </span>
             {data.deltaconfirmed > 0 ? (
@@ -33,14 +37,14 @@ export default class State extends Component {
             <span className="text-gray-600">{data.confirmed}</span>
           </div>
           <div className="mx-1 p-2 shadow-md rounded-md text-center text-base md:flex-1">
-            <span className="text-white rounded-md text-2xl flex bg-green-400 justify-center p-1 my-4 w-full">
+            <span className="text-white rounded-md flex bg-green-400 justify-center p-1 my-4 w-full">
               Active
             </span>
             <br className="block md:hidden" />
             <span className="text-gray-600">{data.active}</span>
           </div>
           <div className="mx-1 p-2 shadow-md rounded-md text-center text-base md:flex-1">
-            <span className="text-white rounded-md text-2xl flex bg-purple-400 justify-center p-1 my-4 w-full">
+            <span className="text-white rounded-md flex bg-purple-400 justify-center p-1 my-4 w-full">
               Recoverd
             </span>
             {data.deltarecovered > 0 ? (
@@ -56,7 +60,7 @@ export default class State extends Component {
             <span className="text-gray-600">{data.recovered}</span>
           </div>
           <div className="mx-1 p-2 shadow-md rounded-md text-center text-base md:flex-1">
-            <span className="text-white rounded-md text-2xl flex bg-gray-500 justify-center p-1 my-4 w-full">
+            <span className="text-white rounded-md flex bg-gray-500 justify-center p-1 my-4 w-full">
               Deaths
             </span>
             {data.deltadeaths > 0 ? (
