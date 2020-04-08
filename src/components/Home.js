@@ -36,7 +36,7 @@ export default class Home extends Component {
             })}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {statewise.map((data, i) => {
               if (i !== 0) {
                 return <State key={data.state} data={data} />;
