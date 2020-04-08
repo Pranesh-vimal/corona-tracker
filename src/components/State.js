@@ -17,7 +17,7 @@ export default class State extends Component {
           {data.state} :{" "}
         </p>
         <p className="my-1 text-green-600 text-center">
-          Last Updated At <LastUpdated data={data} />
+          Last Updated At : <LastUpdated data={data} />
         </p>
         <div className="grid grid-cols-2 gap-2 ">
           <div className="mx-1 p-2 shadow-md rounded-md text-center text-base md:flex-1">
