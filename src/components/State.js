@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import LastUpdated from "./LastUpdated";
+import { NavLink } from 'react-router-dom'
 
 export default class State extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class State extends Component {
     const { data } = this.props;
 
     return (
+      <NavLink to={`${data.state}`}>
       <div className="my-2">
         <p className="shadow-md flex text-lg p-2 bg-orange-500 text-white rounded-md my-3 justify-center">
           {data.state} :{" "}
@@ -77,6 +79,7 @@ export default class State extends Component {
           </div>
         </div>
       </div>
+      </NavLink>
     );
   }
 }
