@@ -23,9 +23,9 @@ export default class State extends Component {
               Last Updated At : <LastUpdated data={data} />
             </b>
           </p>
-          <div className="grid grid-cols-2 gap-2 ">
+          <div className="grid grid-cols-2 gap-2">
             <div className="mx-1 p-2 shadow-md rounded-md text-center text-base md:flex-1">
-              <span className="text-white rounded-md flex bg-red-600 justify-center p-1 my-4 w-full">
+              <span className="text-red-600 rounded-md flex border-red-600 border justify-center p-1 my-4 w-full">
                 Confirmed
               </span>
               {data.deltaconfirmed > 0 ? (
@@ -41,14 +41,14 @@ export default class State extends Component {
               <span className="text-gray-600">{data.confirmed}</span>
             </div>
             <div className="mx-1 p-2 shadow-md rounded-md text-center text-base md:flex-1">
-              <span className="text-white rounded-md flex bg-green-400 justify-center p-1 my-4 w-full">
+              <span className="text-green-600 rounded-md flex border-green-600 border justify-center p-1 my-4 w-full">
                 Active
               </span>
               <br className="block md:hidden" />
               <span className="text-gray-600">{data.active}</span>
             </div>
             <div className="mx-1 p-2 shadow-md rounded-md text-center text-base md:flex-1">
-              <span className="text-white rounded-md flex bg-purple-400 justify-center p-1 my-4 w-full">
+              <span className="text-purple-600 rounded-md flex border-purple-600 border justify-center p-1 my-4 w-full">
                 Recoverd
               </span>
               {data.deltarecovered > 0 ? (
@@ -64,7 +64,7 @@ export default class State extends Component {
               <span className="text-gray-600">{data.recovered}</span>
             </div>
             <div className="mx-1 p-2 shadow-md rounded-md text-center text-base md:flex-1">
-              <span className="text-white rounded-md flex bg-gray-500 justify-center p-1 my-4 w-full">
+              <span className="text-gray-600 rounded-md flex border-gray-600 border justify-center p-1 my-4 w-full">
                 Deaths
               </span>
               {data.deltadeaths > 0 ? (
