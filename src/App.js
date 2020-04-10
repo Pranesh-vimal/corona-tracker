@@ -44,7 +44,7 @@ export default class App extends Component {
   render() {
     const { cases_time_series, statewise, tested, display } = this.state;
     return (
-      <div className="select-none">
+      <div className="select-none h-screen flex flex-col justify-between">
         <Header />
         <Switch>
           <Route exact path="/">
