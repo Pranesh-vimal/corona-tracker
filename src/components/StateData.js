@@ -68,8 +68,8 @@ export default class StateData extends Component {
           District Wise
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          {data.map((data) => {
-            return <District data={data} />;
+          {data.map((data, i) => {
+            return <District data={data} key={i} />;
           })}
         </div>
       </div>

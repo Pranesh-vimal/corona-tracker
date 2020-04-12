@@ -13,7 +13,7 @@ export default class Home extends Component {
   render() {
     const { statewise } = this.props;
     return (
-      <div data-aos="fade-up" className="container mx-auto md:px-16 px-4 mt-3">
+      <div className="container mx-auto md:px-16 px-4 mt-3">
         <h1 className="md:text-4xl text-center md:text-left">
           India Corona Live Tracker
         </h1>
