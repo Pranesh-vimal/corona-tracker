@@ -45,23 +45,25 @@ export default class App extends Component {
     const { cases_time_series, statewise, tested, display } = this.state;
     return (
       <div className="select-none h-screen flex flex-col justify-between">
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home
-              cases_time_series={cases_time_series}
-              statewise={statewise}
-              tested={tested}
-            />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/:state" component={StateData} statewise={statewise} />
-          <Route path="*">
-            <Redirect to="/" />
-          </Route>
-        </Switch>
+        {display && <Header />}
+        {display && (
+          <Switch>
+            <Route exact path="/">
+              <Home
+                cases_time_series={cases_time_series}
+                statewise={statewise}
+                tested={tested}
+              />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/:state" component={StateData} statewise={statewise} />
+            <Route path="*">
+              <Redirect to="/" />
+            </Route>
+          </Switch>
+        )}
         {display && <Footer />}
       </div>
     );
